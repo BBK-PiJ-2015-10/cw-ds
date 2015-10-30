@@ -6,10 +6,6 @@ public class ErrorMessage {
 			this.message = message;
 		}
 		
-		//public void setmessage(String s){
-			//this.message = s;
-		//}
-		
 		public String displaymessage() {
 			return this.message;
 		}
