@@ -56,4 +56,32 @@ public class Object {
 			}
 		}
 
+	public boolean delete(Object p) {
+		if (this.nextObject ==  null ){
+			return false;
+		} else if (this.nextObject.student.equals(p.student)) {
+			this.nextObject = nextObject.nextObject;
+			return true;
+		} else {
+			return this.nextObject.delete(p);
+		}
+	}	
+	
+	public boolean inject(Object x, Object p) {
+		if (this.nextObject ==  null ){
+			return false;
+		} else if (this.nextObject.student.equals(x.student)) {
+			p.setnextObject(this.nextObject);
+			this.nextObject = p;
+			return true;
+		} else {
+			return this.nextObject.inject(x,p);
+		}
+	}
+
+
+
+
+
+	
 	}

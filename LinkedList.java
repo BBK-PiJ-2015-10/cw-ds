@@ -76,6 +76,7 @@
 					else {
 						lead.delete(temp);
 					}
+				dimension--;	
 			}
 			else {
 				System.out.println (result.getError().displayErrormessage());
@@ -84,5 +85,34 @@
 		return result;
 	}
 	
+	public ReturnObject add(int index, Object item){
+			Object temp = lead;
+		for (int i = 0; i < index ; i++) {
+			temp = temp.getnextObject();
+			}
+		ReturnObject result = new ReturnObjectImp (item);
+		if (index > dimension-1 || index < 0 ) {
+			System.out.println ("The index selected is out of range");
+		}
+		else {
+			if (!result.hasError()) {	
+				System.out.println (result.getReturnValue().getstudent());
+					if (lead == temp) {
+						lead = item;
+						lead.setnextObject(temp);
+					}
+					else {	
+						lead.inject(temp, item);
+					}
+			    dimension++;		
+			}
+			else {
+				System.out.println (result.getError().displayErrormessage());
+			} 
+		}
+		return result;
+	} 
+	 	 
+	 
 	 
  }

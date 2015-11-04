@@ -23,6 +23,8 @@
 	
 	private static int INITIAL_ARRAY_SIZE = 5;
 	
+	private int CURRENT_ARRAY_SIZE = 5;
+	
     public ArrayList(){
 		ObjectArray = new Object[INITIAL_ARRAY_SIZE];
 		dimension = 0;		
@@ -76,7 +78,7 @@
 	}
 	
 	private boolean isAlmostFull () {
-		if (ObjectArray.length - dimension < 1) {
+		if (ObjectArray.length - dimension < 2) {
 			return true;
 		}
 		else {
@@ -90,6 +92,7 @@
 			biggerObjectArray[i] = this.ObjectArray[i];
 		}
 		this.ObjectArray = biggerObjectArray;
+		CURRENT_ARRAY_SIZE = CURRENT_ARRAY_SIZE*2;
 	}
 	
 	
@@ -104,6 +107,7 @@
 				for (int i = index; i < dimension ; i++) {
 					this.ObjectArray[i] = this.ObjectArray[i+1];
 				}
+				dimension--;
 			}
 			else {
 				System.out.println (result.getError().displayErrormessage());
@@ -119,12 +123,20 @@
 			System.out.println ("The index selected is out of range");
 		}
 		else {
-			if (!result.hasError()) {				
-				for (int i = index+1; i <= dimension ; i++) {
-						this.ObjectArray[i] = this.ObjectArray[i-1];
-					}
-			this.ObjectArray[index] = item;
-			dimension++;	
+			if (!result.hasError()) {				    					
+				dimension++;
+				if (isAlmostFull()) {
+					reserveMoreMemory();			
+				}
+				Object[] copyObjectArray = new Object[CURRENT_ARRAY_SIZE];
+				for (int i=0; i<index+1; i++) {	
+					copyObjectArray[i] = this.ObjectArray[i];
+				}
+				for (int i=index+1; i<dimension; i++) {	
+					copyObjectArray[i] = this.ObjectArray[i-1];
+					copyObjectArray[index] = item;
+				}	            	
+			this.ObjectArray = copyObjectArray;
 			System.out.println (result.getReturnValue().getstudent());
 			}
 			else {
