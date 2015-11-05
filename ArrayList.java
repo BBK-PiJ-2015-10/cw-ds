@@ -21,6 +21,15 @@
      * (Note: not to be confused with the number of positions in the array , which starts at 0)
      */
 	
+	public Object[] getObjectArray() {
+		return this.ObjectArray;
+	}
+	
+	public void setObjectArray(Object [] input){
+		this.ObjectArray = input;
+	}
+	
+	
 	private static int INITIAL_ARRAY_SIZE = 5;
 	
 	private int CURRENT_ARRAY_SIZE = 5;
