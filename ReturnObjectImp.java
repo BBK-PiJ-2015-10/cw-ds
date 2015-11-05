@@ -10,6 +10,10 @@ public class ReturnObjectImp implements ReturnObject {
 	
 	private Object reader;
 	
+	public Object getoutput(){
+		return this.output;
+	}
+	
 	public ReturnObjectImp(Object input){
 		reader = input;
 		this.output = getReturnValue();

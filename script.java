@@ -25,28 +25,28 @@ public class script {
 	   //System.out.println(S2.getReturnValue().getstudent());
 	   //System.out.println(S2.getError().displayErrormessage());
 	   
-	   FunctionalListImpl first = new FunctionalListImpl();
+	   List first = new LinkedList();
 	   
 	   //FunctionalListImpl first = new FunctionalListImpl (null);
 	   
-	   //first.add(S1);
-	   //first.add(S2);
-	   //first.add(S3);
-	   //first.add(S4);
-	   //first.add(S5);
-	   //first.add(S6);
-	   //first.add(S7);
+	   first.add(S1);
+	   first.add(S2);
+	   first.add(S3);
+	   first.add(S4);
+	   first.add(S5);
+	   first.add(S6);
+	   first.add(S7);
 	   System.out.println("-------------------");
-	   //first.get(0);
-	   //first.get(1);
-	   //first.get(2);
+	   first.get(0);
+	   first.get(1);
+	   first.get(2);
 	   //first.get(3);
 	   //first.get(4);
 	   //first.get(5);
 	   //first.get(6);
 	   //System.out.println("-------------------");
 	   //first.remove(0);
-	   //first.add(0, S7);
+	   first.add(0, S7);
 	   //System.out.println("-------------------");
 	   //first.get(0);
 	   //first.get(1);
@@ -55,10 +55,10 @@ public class script {
 	   //first.get(4);
 	   //first.get(5);
 	   //first.get(6);
-	   first.head();
+	   //first.head();
 	   
 	   System.out.println("-------------------");
-	   first.rest();
+	   //first.rest();
 	   
 	   //first.add(S3);
 	   //first.add(S4);

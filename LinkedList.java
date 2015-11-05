@@ -7,7 +7,7 @@
 	private int dimension;
 	 
 	public ReturnObject add(Object item){
-		ReturnObject result = new ReturnObjectImp (item);
+		ReturnObjectImp result = new ReturnObjectImp (item);
 		if (!result.hasError()) {
 			if (lead == null) {
 				lead = item;
@@ -42,7 +42,7 @@
 		for (int i = 0; i < index ; i++) {
 			temp = temp.getnextObject();
 			}
-		ReturnObject result = new ReturnObjectImp (temp);
+		ReturnObjectImp result = new ReturnObjectImp (temp);
 		if (index > dimension-1 || index < 0 ) {
 			System.out.println ("The index selected is out of range");
 		}
@@ -63,7 +63,7 @@
 		for (int i = 0; i < index ; i++) {
 			temp = temp.getnextObject();
 			}
-		ReturnObject result = new ReturnObjectImp (temp);
+		ReturnObjectImp result = new ReturnObjectImp (temp);
 		if (index > dimension-1 || index < 0 ) {
 			System.out.println ("The index selected is out of range");
 		}
@@ -90,7 +90,7 @@
 		for (int i = 0; i < index ; i++) {
 			temp = temp.getnextObject();
 			}
-		ReturnObject result = new ReturnObjectImp (item);
+		ReturnObjectImp result = new ReturnObjectImp (item);
 		if (index > dimension-1 || index < 0 ) {
 			System.out.println ("The index selected is out of range");
 		}
