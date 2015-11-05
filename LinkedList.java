@@ -5,6 +5,10 @@
 	private Object lead;
 	 
 	private int dimension;
+	
+	public void setdimension (int k){
+		this.dimension = k;
+	}
 	 
 	public ReturnObject add(Object item){
 		ReturnObjectImp result = new ReturnObjectImp (item);
