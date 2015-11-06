@@ -38,15 +38,16 @@ public class script {
 	   //first.add(S7);
 	   System.out.println("-------------------");
 	   StackImpl second = new StackImpl (first);
-	   second.size();
+	   //ImprovedStackImpl second = new ImprovedStackImpl (first);
+	   //second.size();
 	   //second.top();
-	   //second.push(S5);
+	   second.push(S4);
 	   //second.size();
 	   //second.top();
 	   //second.isEmpty();
-	   second.pop();
-	   second.size();
-	   second.pop();
+	   //second.pop();
+	   //second.size();
+	   //second.pop();
 	   
 	   //first.get(0);
 	   //first.get(1);
