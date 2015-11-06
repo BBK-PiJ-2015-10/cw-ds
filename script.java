@@ -25,18 +25,29 @@ public class script {
 	   //System.out.println(S2.getReturnValue().getstudent());
 	   //System.out.println(S2.getError().displayErrormessage());
 	   
-	   SampleableList first = new SampleableListImpl();
+	   List first = new LinkedList();
 	   
 	   //FunctionalListImpl first = new FunctionalListImpl (null);
 	   
 	   first.add(S1);
-	   first.add(S2);
-	   first.add(S3);
-	   first.add(S4);
-	   first.add(S5);
-	   first.add(S6);
-	   first.add(S7);
+	   //first.add(S2);
+	   //first.add(S3);
+	   //first.add(S4);
+	   //first.add(S5);
+	   //first.add(S6);
+	   //first.add(S7);
 	   System.out.println("-------------------");
+	   StackImpl second = new StackImpl (first);
+	   second.size();
+	   //second.top();
+	   //second.push(S5);
+	   //second.size();
+	   //second.top();
+	   //second.isEmpty();
+	   second.pop();
+	   second.size();
+	   second.pop();
+	   
 	   //first.get(0);
 	   //first.get(1);
 	   //first.get(2);
@@ -57,8 +68,8 @@ public class script {
 	   //first.get(6);
 	   //first.head();
 	   
-	   System.out.println("-------------------");
-	   first.sample();
+	   //System.out.println("-------------------");
+	   //first.sample();
 	   //first.head();
 	     //first.rest();
 	   
