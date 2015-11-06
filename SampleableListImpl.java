@@ -1,13 +1,5 @@
-/**
- * Implementation of interface list using an array as support. 
- */
- 
- public class ArrayList implements List {
- 
-	/**
-     * The array that contains the Objects. When full, a new one
-     * is created.
-     */
+public class SampleableListImpl implements SampleableList {
+
  
 	private Object[] ObjectArray;
 	
@@ -38,7 +30,7 @@
 	
 	private int CURRENT_ARRAY_SIZE = 5;
 	
-    public ArrayList(){
+    public SampleableListImpl(){
 		ObjectArray = new Object[INITIAL_ARRAY_SIZE];
 		dimension = 0;		
 	}
@@ -158,7 +150,23 @@
 		}		
 		return result;
 	}
+
+	public SampleableList sample(){
+		SampleableListImpl result = new SampleableListImpl();
+		Object[] copyObjectArray = new Object[CURRENT_ARRAY_SIZE];
+        int countera = 0;
+		int counterb = 0;
+		while (counterb < size()){
+			copyObjectArray[countera] = this.ObjectArray[counterb];
+			countera= countera+1;
+			counterb= counterb+2;
+		}	
+		result.setObjectArray(copyObjectArray);
+		result.setdimension (countera);
+		for (int i=0; i<result.size(); i++) {	
+			System.out.println(result.getObjectArray()[i].getstudent());
+		}
+		return result;
+	}
 	
- 
- 
- }
+}

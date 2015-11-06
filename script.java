@@ -25,7 +25,7 @@ public class script {
 	   //System.out.println(S2.getReturnValue().getstudent());
 	   //System.out.println(S2.getError().displayErrormessage());
 	   
-	   FunctionalLinkedList first = new FunctionalLinkedList();
+	   SampleableList first = new SampleableListImpl();
 	   
 	   //FunctionalListImpl first = new FunctionalListImpl (null);
 	   
@@ -58,8 +58,9 @@ public class script {
 	   //first.head();
 	   
 	   System.out.println("-------------------");
+	   first.sample();
 	   //first.head();
-	     first.rest();
+	     //first.rest();
 	   
 	   //first.add(S3);
 	   //first.add(S4);
