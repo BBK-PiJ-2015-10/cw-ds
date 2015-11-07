@@ -45,13 +45,15 @@ public class script {
 	   second.push(S2);
 	   second.push(S3);
 	   second.push(S4);
-	   second.push(S5);
+	   second.push(S3);
 	   second.push(S6); 
 	   second.push(S7);
 	   //System.out.println("Below is the result of the top");
-	   second.pop();
-	   System.out.println("Below is the result of the top");
-	   second.top();
+	   //second.pop();
+	   //System.out.println("Below is the result of the top");
+	   //second.top();
+	   System.out.println("This the result of remove");
+	   second.remove(S3);
 	   
 	   //System.out.println("Below is the result of the reverse");
 	   //second.reverse();

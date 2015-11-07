@@ -45,7 +45,16 @@ public class ImprovedStackImpl implements ImprovedStack {
 		return result;
 	}
 	
+	public void remove(Object object){
+		for (int i = 0; i < this.internalList.size(); i++){
+			if (this.internalList.get(i).getReturnValue() == object){
+				System.out.println(1);
+				this.internalList.remove(i);
+			}
+		}
+		for (int i = 0; i < this.internalList.size(); i++){
+		    this.internalList.get(i).getReturnValue().getstudent(); 	
+		}	
+	}
 	
-	
-
 }
