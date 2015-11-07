@@ -25,7 +25,7 @@ public class script {
 	   //System.out.println(S2.getReturnValue().getstudent());
 	   //System.out.println(S2.getError().displayErrormessage());
 	   
-	   List first = new LinkedList();
+	   List first = new ArrayList();
 	   
 	   //FunctionalListImpl first = new FunctionalListImpl (null);
 	   
