@@ -29,7 +29,7 @@ public class script {
 	   
 	   //FunctionalListImpl first = new FunctionalListImpl (null);
 	   
-	   first.add(S1);
+	   //first.add(S1);
 	   //first.add(S2);
 	   //first.add(S3);
 	   //first.add(S4);
@@ -37,11 +37,24 @@ public class script {
 	   //first.add(S6);
 	   //first.add(S7);
 	   System.out.println("-------------------");
-	   StackImpl second = new StackImpl (first);
-	   //ImprovedStackImpl second = new ImprovedStackImpl (first);
+	   //StackImpl second = new StackImpl (first);
+	   ImprovedStackImpl second = new ImprovedStackImpl ();
 	   //second.size();
 	   //second.top();
+	   second.push(S1);
+	   second.push(S2);
+	   second.push(S3);
 	   second.push(S4);
+	   second.push(S5);
+	   second.push(S6); 
+	   second.push(S7);
+	   //System.out.println("Below is the result of the top");
+	   second.pop();
+	   System.out.println("Below is the result of the top");
+	   second.top();
+	   
+	   //System.out.println("Below is the result of the reverse");
+	   //second.reverse();
 	   //second.size();
 	   //second.top();
 	   //second.isEmpty();
