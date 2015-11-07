@@ -60,9 +60,6 @@
 		return dimension;
 	}
 	
-	
-	
-	
 	/**
      * This the implementation of the isEmpty() method from the interface.
 	 * It leverages the dimension counter to figure out if the array is empty or not.
@@ -177,6 +174,5 @@
 		return result;
 	} 
 	 	 
-	 
 	 
  }
