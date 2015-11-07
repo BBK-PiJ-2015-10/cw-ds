@@ -7,10 +7,10 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	 public ReturnObject head(){
 		 ReturnObject result = new ReturnObjectImp (getObjectArray()[0]);
 		 if (!result.hasError()) {	
-			 System.out.println (result.getReturnValue().getstudent());
+			 //System.out.println (result.getReturnValue().getstudent());
 		 }
 		 else {
-			  System.out.println (result.getError().displayErrormessage());
+			  //System.out.println (result.getError().displayErrormessage());
 		 } 
 		 return result;
 	 }
