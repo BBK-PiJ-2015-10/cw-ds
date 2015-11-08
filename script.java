@@ -18,8 +18,8 @@ public class script {
 	   Object S7 = new Object("Ale Cane" , 39);
 	   
 	   System.out.println("---------------------------------------------------------------");
-	   System.out.println("We are now testing ArrayList");
-	   ArrayList fourth = new ArrayList ();
+	   System.out.println("We are now testing the Lists");
+	   LinkedList fourth = new LinkedList ();
 	   fourth.add(S1);
 	   fourth.add(S2);
 	   fourth.add(S3);
@@ -28,19 +28,21 @@ public class script {
 	   fourth.add(S6);
 	   fourth.add(S7);
 	   
-	   System.out.println(fourth.get(2).getReturnValue().getstudent());
-	   System.out.println(fourth.get(8).getError().displayErrormessage());
+	   System.out.println(fourth.get(6).getReturnValue().getstudent());
+	   fourth.get(8);
+	   fourth.add(9,S3);
+	   //System.out.println(fourth.get(8).getError().displayErrormessage());
 	   
 	   System.out.println(fourth.get(0).getReturnValue().getstudent());
 	   fourth.add(0,S4);
 	   System.out.println(fourth.get(0).getReturnValue().getstudent());
-	   System.out.println(fourth.add(10,S4).getError().displayErrormessage());
+	   //System.out.println(fourth.add(10,S4).getError().displayErrormessage());
 	   
 	   fourth.remove(0);
 	   System.out.println(fourth.get(1).getReturnValue().getstudent());
-	   System.out.println(fourth.get(12).getError().displayErrormessage());
+	   //System.out.println(fourth.get(12).getError().displayErrormessage());
 	   fourth.remove(3);
-	   System.out.println(fourth.remove(12).getError().displayErrormessage());
+	   //System.out.println(fourth.remove(12).getError().displayErrormessage());
 	   
 
 	   
