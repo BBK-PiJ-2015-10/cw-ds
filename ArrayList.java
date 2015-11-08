@@ -1,5 +1,6 @@
 /**
  * Implementation of interface list using an array as a support. 
+ *@author YAP
  */
  
  public class ArrayList implements List {

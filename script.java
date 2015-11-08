@@ -19,8 +19,11 @@ public class script {
 	   
 	   System.out.println("---------------------------------------------------------------");
 	   System.out.println("We are now testing all the different type of Lists");
-	   FunctionalLinkedList fourth = new FunctionalLinkedList ();
+	   FunctionalArrayList fourth = new FunctionalArrayList ();
+	   fourth.rest();
+	   System.out.println(fourth.head().getError().displayErrormessage());
 	   fourth.add(S1);
+	   fourth.head();
 	   fourth.add(S2);
 	   fourth.add(S3);
 	   fourth.add(S4);

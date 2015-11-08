@@ -1,5 +1,6 @@
 /**
  * This is the extension of ArrayList and implementation of FunctionalList using Arrays. 
+ *@author YAP
  */
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	 
@@ -14,16 +15,15 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	 /**
      * This is the implementation of the head() method defined on FunctionalList.
 	 * It leverages the get() method from List to return firt item
-     * on the list. It has a couple of grayed out println that helped on development.
+     * on the list. 
 	 */
 	 public ReturnObject head(){
-		 ReturnObject result = new ReturnObjectImpl (getObjectArray()[0]);
-		 if (!result.hasError()) {	
-			 //System.out.println (result.getReturnValue().getstudent());
+		 if (isEmpty()) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
+			result.manualsetErrormessage("The list is empty");
+			return result;
 		 }
-		 else {
-			  //System.out.println (result.getError().displayErrormessage());
-		 } 
+		 ReturnObject result = new ReturnObjectImpl (getObjectArray()[0]);
 		 return result;
 	 }
 	

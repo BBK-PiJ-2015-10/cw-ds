@@ -94,7 +94,5 @@ public class ReturnObjectImpl implements ReturnObject {
 		this.output = null;
 	}
 	
-	
-
 }
 
