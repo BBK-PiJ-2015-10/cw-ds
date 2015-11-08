@@ -29,8 +29,6 @@
 	 * It uses a dimension counter to keep track of the elements in the list.
 	 * Furthermore, it uses isAlmostFull() method to decide if the array needs to be
 	 * made bigger thru the triggering of the reserveMoreMemory method.
-	 * It also has a couple of println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject add(Object item){
 		ReturnObjectImpl result = new ReturnObjectImpl (item);
@@ -42,11 +40,9 @@
 				lead.insert(item);
 			}
 			dimension++;	
-			//System.out.println (result.getReturnValue().getstudent());
 		}
 		else {
 			result.manualsetErrormessage("The input provided was empty");
-			//System.out.println (result.getError().displayErrormessage());
 		} 
 		result.manualsetoutput();
 		return result;
@@ -77,28 +73,19 @@
      * This the implementation of the get method from the interface.
 	 * It leverages an if statement to figure out if the input provided is correct.
 	 * It uses a for loop to be able able to find the object in the list.
-     * It also has a couple of if and println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject get(int index){
 		if (index > dimension-1 || index < 0 ) {
 			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			Object temp = lead;
 			for (int i = 0; i < index ; i++) {
 			temp = temp.getnextObject();
 			}
-			ReturnObjectImpl result = new ReturnObjectImpl (temp);
-			if (!result.hasError()) {	
-				//System.out.println (result.getReturnValue().getstudent());
-			}
-			else {
-				//System.out.println (result.getError().displayErrormessage());
-			}	
+			ReturnObjectImpl result = new ReturnObjectImpl (temp);	
 		return result;
 		}
 	}
@@ -107,15 +94,12 @@
      * This the implementation of the remove method from the interface.
 	 * It leverages an if statement to figure out if the input provided is correct.
      * It uses a for loop in order to reset the list order once this element is removed. 
-	 * It also has a couple of else and println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject remove(int index){
 		if (index > dimension-1 || index < 0 ) {
 			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			Object temp = lead;
@@ -124,7 +108,6 @@
 			}
 			ReturnObjectImpl result = new ReturnObjectImpl (temp);
 			if (!result.hasError()) {	
-				//System.out.println (result.getReturnValue().getstudent());
 					if (lead == temp) {
 						lead = temp.getnextObject();
 					}
@@ -132,9 +115,6 @@
 						lead.delete(temp);
 					}
 				dimension--;	
-			}
-			else {
-				//System.out.println (result.getError().displayErrormessage());
 			}
         return result;			
 		}
@@ -145,15 +125,12 @@
 	 * It leverages if statement for error setting messages. It also leverages for
 	 * loops in order to add the Object being given in its proper position. 
 	 * It uses a dimension counter to keep track of the elements in the list.
-	 * It also has a couple of println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject add(int index, Object item){
 		if (index > dimension-1 || index < 0 ) {
 			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			Object temp = lead;
@@ -162,7 +139,6 @@
 			}
 			ReturnObjectImpl result = new ReturnObjectImpl (item);
 			if (!result.hasError()) {	
-				//System.out.println (result.getReturnValue().getstudent());
 					if (lead == temp) {
 						lead = item;
 						lead.setnextObject(temp);
@@ -171,9 +147,6 @@
 						lead.inject(temp, item);
 					}
 			    dimension++;		
-			}
-			else {
-				//System.out.println (result.getError().displayErrormessage());
 			}
 			result.manualsetoutput();
 			return result;

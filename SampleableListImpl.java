@@ -68,8 +68,6 @@ public class SampleableListImpl implements SampleableList {
 	 * It uses a dimension counter to keep track of the elements in the list.
 	 * Furthermore, it uses isAlmostFull() method to decide if the array needs to be
 	 * made bigger thru the triggering of the reserveMoreMemory method.
-	 * It also has a couple of println statements that have been grayed out, but were
-	 * useful for development aid.
 	 *
 	 */
 	public ReturnObject add(Object item){
@@ -80,11 +78,9 @@ public class SampleableListImpl implements SampleableList {
 			}
 			ObjectArray [dimension] = item;
 			dimension++;	
-			//System.out.println (result.getReturnValue().getstudent());
 		}
 		else {
 			result.manualsetErrormessage("The input provided was empty");
-			//System.out.println (result.getError().displayErrormessage());
 		} 
 		result.manualsetoutput();
 		return result;
@@ -114,24 +110,15 @@ public class SampleableListImpl implements SampleableList {
 	/**
      * This the implementation of the get method from the interface.
 	 * It leverages an if statement to figure out if the input provided is correct.
-     * It also has a couple of if and println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject get(int index){
 		if (index > dimension-1 || index < 0 ) {
 			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
-			if (!result.hasError()) {	
-				//System.out.println (result.getReturnValue().getstudent());
-			}
-			else {
-				//System.out.println (result.getError().displayErrormessage());
-			}
 			return result;	
 		}
 	}
@@ -166,27 +153,20 @@ public class SampleableListImpl implements SampleableList {
      * This the implementation of the remove method from the interface.
 	 * It leverages an if statement to figure out if the input provided is correct.
      * It uses a for loop in order to reset the array order once this element is removed. 
-	 * It also has a couple of else and println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject remove(int index){	
 		if (index > dimension-1 || index < 0 ) {
 			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
 			if (!result.hasError()) {	
-				//System.out.println (result.getReturnValue().getstudent());
 				for (int i = index; i < dimension ; i++) {
 					this.ObjectArray[i] = this.ObjectArray[i+1];
 				}
 				dimension--;
-			}
-			else {
-				//System.out.println (result.getError().displayErrormessage());
 			}
 			return result;	
 		}
@@ -199,14 +179,11 @@ public class SampleableListImpl implements SampleableList {
 	 * It uses a dimension counter to keep track of the elements in the list.
 	 * Furthermore, it uses isAlmostFull() method to decide if the array needs to be
 	 * made bigger thru the triggering of the reserveMoreMemory method.
-	 * It also has a couple of println statements that have been grayed out, but were
-	 * useful for development aid.
 	 */
 	public ReturnObject add(int index, Object item) {
 		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (index > dimension-1 || index < 0 ) {
 			result.manualsetErrormessage("The index selected is out of range");
-			//System.out.println ("The index selected is out of range");
 		}
 		else {
 			if (!result.hasError()) {				    					
@@ -223,11 +200,9 @@ public class SampleableListImpl implements SampleableList {
 					copyObjectArray[index] = item;
 				}	            	
 			this.ObjectArray = copyObjectArray;
-			//System.out.println (result.getReturnValue().getstudent());
 			}
 			else {
 				result.manualsetErrormessage("The input provided was empty");
-				//System.out.println (result.getError().displayErrormessage());
 			}
 		}		
 		result.manualsetoutput();
