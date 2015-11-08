@@ -32,6 +32,7 @@ public class ReturnObjectImp implements ReturnObject {
 	public ReturnObjectImp(Object input){
 		reader = input;
 		this.output = getReturnValue();
+		//this.message = null;
 		this.message = getError();
 	}
 	
@@ -67,12 +68,17 @@ public class ReturnObjectImp implements ReturnObject {
 	 *then it returns "The list is empty"
 	 */
 	public ErrorMessage getError(){
+		//if (!hasError() ){
+			//ErrorMessage out = new ErrorMessage ("NO_ERROR");
+			//this.message = out;
+		//}
+		//return this.message;
 		if (!hasError() ){
 			ErrorMessage output = new ErrorMessage ("NO_ERROR");
 			return output; 
 		}	
 		else {	
-			ErrorMessage output = new ErrorMessage ("The list is empty");
+			ErrorMessage output = new ErrorMessage ("The value is empty");
 			return output; 
 		}	
 	}

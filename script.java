@@ -9,8 +9,6 @@ public class script {
 	   
 	   public void launch (){
 		
-       //System.out.println("Testing");
-       
 	   Object S1 = new Object("Bob", 24);  
 	   Object S2 = new Object("Martin", 39);
 	   Object S3 = new Object("Sam", 45);
@@ -18,6 +16,45 @@ public class script {
 	   Object S5 = new Object("Marco Polo", 37);
 	   Object S6 = new Object("Leonel" , 39);
 	   Object S7 = new Object("Ale Cane" , 39);
+	   
+	   System.out.println("---------------------------------------------------------------");
+	   System.out.println("We are now testing ArrayList");
+	   ArrayList fourth = new ArrayList ();
+	   fourth.add(S1);
+	   fourth.add(S2);
+	   fourth.add(S3);
+	   fourth.add(S4);
+	   fourth.add(S5);
+	   fourth.add(S6);
+	   fourth.add(S7);
+	   
+	   System.out.println(fourth.get(2).getReturnValue().getstudent());
+	   System.out.println(fourth.get(8).getError().displayErrormessage());
+	   
+	   System.out.println(fourth.get(0).getReturnValue().getstudent());
+	   fourth.add(0,S4);
+	   System.out.println(fourth.get(0).getReturnValue().getstudent());
+	   System.out.println(fourth.add(10,S4).getError().displayErrormessage());
+	   
+	   fourth.remove(0);
+	   System.out.println(fourth.get(1).getReturnValue().getstudent());
+	   System.out.println(fourth.get(12).getError().displayErrormessage());
+	   fourth.remove(3);
+	   System.out.println(fourth.remove(12).getError().displayErrormessage());
+	   
+
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 	   //System.out.println(S1.getstudent());
 	   //ReturnObject S2 = new ReturnObjectImp(S1);
@@ -36,8 +73,26 @@ public class script {
 	   //first.add(S5);
 	   //first.add(S6);
 	   //first.add(S7);
-	   System.out.println("-------------------");
 	   //StackImpl second = new StackImpl (first);
+	   
+	   System.out.println("---------------------------------------------------");
+	   System.out.println("We are now testing SampleableListImpl");
+	   SampleableListImpl third = new SampleableListImpl ();
+	   third.add(S1);
+	   third.add(S2);
+	   third.add(S3);
+	   third.add(S4);
+	   third.add(S5);
+	   third.add(S6);
+	   third.add(S7);
+	   third.sample();
+	   System.out.println(third.sample().get(0).getReturnValue().getstudent());
+	   System.out.println(third.sample().get(1).getReturnValue().getstudent());
+	   System.out.println(third.sample().get(2).getReturnValue().getstudent());
+	   System.out.println(third.sample().get(3).getReturnValue().getstudent());
+	   //System.out.println(third.sample().get(4).getReturnValue().getstudent());
+	   System.out.println(third.get(4).getError().displayErrormessage());
+	   System.out.println("--------------------------------------------------");
 	   
 	   System.out.println("---------------------------------------------------");
 	   System.out.println("We are now testing ImprovedStackImpl");

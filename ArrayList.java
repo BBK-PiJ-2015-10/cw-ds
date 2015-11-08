@@ -118,20 +118,22 @@
 	 * useful for development aid.
 	 */
 	public ReturnObject get(int index){
-		ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 		if (index > dimension-1 || index < 0 ) {
+			ReturnObjectImp result = new ReturnObjectImp(null);
 			result.manualsetErrormessage("The index selected is out of range");
+			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
+			ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 			}
 			else {
 				//System.out.println (result.getError().displayErrormessage());
 			} 
-		}
 		return result;
+		}
 	}
 	
 	/**
@@ -168,12 +170,14 @@
 	 * useful for development aid.
 	 */
 	public ReturnObject remove(int index){	
-		ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 		if (index > dimension-1 || index < 0 ) {
+			ReturnObjectImp result = new ReturnObjectImp(null);
 			result.manualsetErrormessage("The index selected is out of range");
+			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
+			ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 				for (int i = index; i < dimension ; i++) {
@@ -183,9 +187,9 @@
 			}
 			else {
 				//System.out.println (result.getError().displayErrormessage());
-			} 
+			}
+            return result;			
 		}
-		return result;
 	}
 		
 	/**
