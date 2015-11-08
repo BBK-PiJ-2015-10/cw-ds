@@ -55,7 +55,14 @@ public class StackImpl extends AbstractStack {
      * position 0.
 	 */
 	public ReturnObject top(){
+		if (this.internalList.isEmpty()) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
+			result.manualsetErrormessage("The stack is empty");
+			return result;
+		}
+		else {
 		return this.internalList.get(0);
+		}
 	}
 
 	/**
@@ -64,7 +71,14 @@ public class StackImpl extends AbstractStack {
      * position 0.
 	 */
 	public ReturnObject pop(){
+		if (this.internalList.isEmpty()) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
+			result.manualsetErrormessage("No more items on the stack");
+			return result;
+		}
+		else {
 		return this.internalList.remove(0);
+		}
 	}
 
 

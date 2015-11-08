@@ -1,9 +1,9 @@
 /**
-*  ReturnObjectImp is the implementation of interface ReturnObject.
+*  ReturnObjectImpl is the implementation of interface ReturnObject.
 *  @author YAP
 */
 
-public class ReturnObjectImp implements ReturnObject {
+public class ReturnObjectImpl implements ReturnObject {
 	
 	/**
 	 * This is an element type Object that is wrapped inside the ReturnObject class.
@@ -22,18 +22,28 @@ public class ReturnObjectImp implements ReturnObject {
 	private Object reader;
 	
 	/**
-	 * This is a getter method to be able to see the object wrapped in the ReturnObjectImp class.
+	 * This is a getter method to be able to see the object wrapped in the ReturnObjectImpl class.
 	 *@return the object wrapped in the class.
 	 */	
 	public Object getoutput(){
 		return this.output;
 	}
 	
-	public ReturnObjectImp(Object input){
+	/**
+	 * This is the constructor of ReturnObjectImpl class. If the Object wrapped is not empty then
+	 * the error in ReturnObjectImpl is No Error, otherwise, the error is the value is empty.
+	 */
+	public ReturnObjectImpl(Object input){
 		reader = input;
 		this.output = getReturnValue();
-		//this.message = null;
-		this.message = getError();
+		if (!hasError() ){
+			ErrorMessage output = new ErrorMessage ("NO_ERROR");
+			this.message = output; 
+		}
+		else {
+			ErrorMessage output = new ErrorMessage ("The value is empty");
+			this.message = output;
+		}	
 	}
 	
 	/**
@@ -64,29 +74,22 @@ public class ReturnObjectImp implements ReturnObject {
 	
 	/**
 	 * This is the implementation of the getError() method listed in the Interface ReturnObject.
-	 *@return type ErrorMessage an error message "No Error" if the method hasError is false, if hasError is true
-	 *then it returns "The list is empty"
 	 */
 	public ErrorMessage getError(){
-		//if (!hasError() ){
-			//ErrorMessage out = new ErrorMessage ("NO_ERROR");
-			//this.message = out;
-		//}
-		//return this.message;
-		if (!hasError() ){
-			ErrorMessage output = new ErrorMessage ("NO_ERROR");
-			return output; 
-		}	
-		else {	
-			ErrorMessage output = new ErrorMessage ("The value is empty");
-			return output; 
-		}	
+		return this.message;
 	}
 	
-    public void manualsetErrormessage (String newmessage){
+    
+	/**
+	 * This is a method to manually change the error message on this ReturnObjectImpl class.
+	 */
+	public void manualsetErrormessage (String newmessage){
 		this.message.setErrormessage(newmessage);
 	}
 	
+	/**
+	 * This is a method to manually set up the output element to null.
+	 */
 	public void manualsetoutput (){
 		this.output = null;
 	}

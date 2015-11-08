@@ -17,7 +17,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      * on the list. It has a couple of grayed out println that helped on development.
 	 */
 	 public ReturnObject head(){
-		 ReturnObject result = new ReturnObjectImp (getObjectArray()[0]);
+		 ReturnObject result = new ReturnObjectImpl (getObjectArray()[0]);
 		 if (!result.hasError()) {	
 			 //System.out.println (result.getReturnValue().getstudent());
 		 }

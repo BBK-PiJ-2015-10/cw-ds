@@ -72,7 +72,7 @@
 	 *
 	 */
 	public ReturnObject add(Object item){
-		ReturnObjectImp result = new ReturnObjectImp (item);
+		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (!result.hasError()) {
 			if (isAlmostFull()) {
 				reserveMoreMemory();			
@@ -119,13 +119,13 @@
 	 */
 	public ReturnObject get(int index){
 		if (index > dimension-1 || index < 0 ) {
-			ReturnObjectImp result = new ReturnObjectImp(null);
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
-			ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
+			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 			}
@@ -171,13 +171,13 @@
 	 */
 	public ReturnObject remove(int index){	
 		if (index > dimension-1 || index < 0 ) {
-			ReturnObjectImp result = new ReturnObjectImp(null);
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
-			ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
+			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 				for (int i = index; i < dimension ; i++) {
@@ -203,7 +203,7 @@
 	 * useful for development aid.
 	 */
 	public ReturnObject add(int index, Object item) {
-		ReturnObjectImp result = new ReturnObjectImp (item);
+		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (index > dimension-1 || index < 0 ) {
 			result.manualsetErrormessage("The index selected is out of range");
 			//System.out.println ("The index selected is out of range");

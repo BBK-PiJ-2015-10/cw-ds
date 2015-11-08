@@ -33,7 +33,7 @@
 	 * useful for development aid.
 	 */
 	public ReturnObject add(Object item){
-		ReturnObjectImp result = new ReturnObjectImp (item);
+		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (!result.hasError()) {
 			if (lead == null) {
 				lead = item;
@@ -82,7 +82,7 @@
 	 */
 	public ReturnObject get(int index){
 		if (index > dimension-1 || index < 0 ) {
-			ReturnObjectImp result = new ReturnObjectImp (null);
+			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
 			//System.out.println ("The index selected is out of range");
@@ -92,7 +92,7 @@
 			for (int i = 0; i < index ; i++) {
 			temp = temp.getnextObject();
 			}
-			ReturnObjectImp result = new ReturnObjectImp (temp);
+			ReturnObjectImpl result = new ReturnObjectImpl (temp);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 			}
@@ -112,7 +112,7 @@
 	 */
 	public ReturnObject remove(int index){
 		if (index > dimension-1 || index < 0 ) {
-			ReturnObjectImp result = new ReturnObjectImp (null);
+			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
 			//System.out.println ("The index selected is out of range");
@@ -122,7 +122,7 @@
 			for (int i = 0; i < index ; i++) {
 				temp = temp.getnextObject();
 			}
-			ReturnObjectImp result = new ReturnObjectImp (temp);
+			ReturnObjectImpl result = new ReturnObjectImpl (temp);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 					if (lead == temp) {
@@ -150,7 +150,7 @@
 	 */
 	public ReturnObject add(int index, Object item){
 		if (index > dimension-1 || index < 0 ) {
-			ReturnObjectImp result = new ReturnObjectImp (null);
+			ReturnObjectImpl result = new ReturnObjectImpl (null);
 			result.manualsetErrormessage("The index selected is out of range");
 			return result;
 			//System.out.println ("The index selected is out of range");
@@ -160,7 +160,7 @@
 			for (int i = 0; i < index ; i++) {
 				temp = temp.getnextObject();
 			}
-			ReturnObjectImp result = new ReturnObjectImp (item);
+			ReturnObjectImpl result = new ReturnObjectImpl (item);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 					if (lead == temp) {

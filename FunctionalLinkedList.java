@@ -15,7 +15,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	 
 	 /**
      * This is the implementation of the head() method defined on FunctionalList.
-	 * It leverages the get() method from List to return firt item
+	 * It leverages the get() method from List to return first item
      * on the list.It has a couple of grayed out println that helped on development.
 	 */
 	 public ReturnObject head(){

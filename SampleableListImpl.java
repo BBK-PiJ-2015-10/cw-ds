@@ -73,7 +73,7 @@ public class SampleableListImpl implements SampleableList {
 	 *
 	 */
 	public ReturnObject add(Object item){
-		ReturnObjectImp result = new ReturnObjectImp (item);
+		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (!result.hasError()) {
 			if (isAlmostFull()) {
 				reserveMoreMemory();			
@@ -118,20 +118,22 @@ public class SampleableListImpl implements SampleableList {
 	 * useful for development aid.
 	 */
 	public ReturnObject get(int index){
-		ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 		if (index > dimension-1 || index < 0 ) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
+			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
+			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 			}
 			else {
 				//System.out.println (result.getError().displayErrormessage());
-			} 
+			}
+			return result;	
 		}
-		return result;
 	}
 	
 	/**
@@ -168,12 +170,14 @@ public class SampleableListImpl implements SampleableList {
 	 * useful for development aid.
 	 */
 	public ReturnObject remove(int index){	
-		ReturnObjectImp result = new ReturnObjectImp (ObjectArray[index]);
 		if (index > dimension-1 || index < 0 ) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
 			result.manualsetErrormessage("The index selected is out of range");
+			return result;
 			//System.out.println ("The index selected is out of range");
 		}
 		else {
+			ReturnObjectImpl result = new ReturnObjectImpl (ObjectArray[index]);
 			if (!result.hasError()) {	
 				//System.out.println (result.getReturnValue().getstudent());
 				for (int i = index; i < dimension ; i++) {
@@ -183,9 +187,9 @@ public class SampleableListImpl implements SampleableList {
 			}
 			else {
 				//System.out.println (result.getError().displayErrormessage());
-			} 
+			}
+			return result;	
 		}
-		return result;
 	}
 		
 	/**
@@ -199,7 +203,7 @@ public class SampleableListImpl implements SampleableList {
 	 * useful for development aid.
 	 */
 	public ReturnObject add(int index, Object item) {
-		ReturnObjectImp result = new ReturnObjectImp (item);
+		ReturnObjectImpl result = new ReturnObjectImpl (item);
 		if (index > dimension-1 || index < 0 ) {
 			result.manualsetErrormessage("The index selected is out of range");
 			//System.out.println ("The index selected is out of range");
@@ -248,9 +252,6 @@ public class SampleableListImpl implements SampleableList {
 		}	
 		result.setObjectArray(copyObjectArray);
 		result.setdimension (countera);
-		//for (int i=0; i<result.size(); i++) {	
-			//System.out.println(result.getObjectArray()[i].getstudent());
-		//}
 		return result;
 	}
 	

@@ -18,8 +18,8 @@ public class script {
 	   Object S7 = new Object("Ale Cane" , 39);
 	   
 	   System.out.println("---------------------------------------------------------------");
-	   System.out.println("We are now testing the Lists");
-	   LinkedList fourth = new LinkedList ();
+	   System.out.println("We are now testing all the different type of Lists");
+	   FunctionalLinkedList fourth = new FunctionalLinkedList ();
 	   fourth.add(S1);
 	   fourth.add(S2);
 	   fourth.add(S3);
@@ -31,51 +31,24 @@ public class script {
 	   System.out.println(fourth.get(6).getReturnValue().getstudent());
 	   fourth.get(8);
 	   fourth.add(9,S3);
-	   //System.out.println(fourth.get(8).getError().displayErrormessage());
+	   System.out.println(fourth.get(8).getError().displayErrormessage());
 	   
 	   System.out.println(fourth.get(0).getReturnValue().getstudent());
 	   fourth.add(0,S4);
 	   System.out.println(fourth.get(0).getReturnValue().getstudent());
-	   //System.out.println(fourth.add(10,S4).getError().displayErrormessage());
 	   
 	   fourth.remove(0);
-	   System.out.println(fourth.get(1).getReturnValue().getstudent());
-	   //System.out.println(fourth.get(12).getError().displayErrormessage());
+	   System.out.println(fourth.get(0).getReturnValue().getstudent());
 	   fourth.remove(3);
-	   //System.out.println(fourth.remove(12).getError().displayErrormessage());
+	   System.out.println(fourth.remove(12).getError().displayErrormessage());
 	   
+	   
+	   System.out.println(fourth.head().getReturnValue().getstudent());
+	   System.out.println(fourth.rest().head().getReturnValue().getstudent());
 
 	   
+	  
 	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   //System.out.println(S1.getstudent());
-	   //ReturnObject S2 = new ReturnObjectImp(S1);
-	   //System.out.println(S2.hasError());
-	   //System.out.println(S2.getReturnValue().getstudent());
-	   //System.out.println(S2.getError().displayErrormessage());
-	   
-	   List first = new ArrayList();
-	   
-	   //FunctionalListImpl first = new FunctionalListImpl (null);
-	   
-	   //first.add(S1);
-	   //first.add(S2);
-	   //first.add(S3);
-	   //first.add(S4);
-	   //first.add(S5);
-	   //first.add(S6);
-	   //first.add(S7);
-	   //StackImpl second = new StackImpl (first);
 	   
 	   System.out.println("---------------------------------------------------");
 	   System.out.println("We are now testing SampleableListImpl");
@@ -87,6 +60,8 @@ public class script {
 	   third.add(S5);
 	   third.add(S6);
 	   third.add(S7);
+	   System.out.println(third.get(9).getError().displayErrormessage());
+	   
 	   third.sample();
 	   System.out.println(third.sample().get(0).getReturnValue().getstudent());
 	   System.out.println(third.sample().get(1).getReturnValue().getstudent());
@@ -97,25 +72,44 @@ public class script {
 	   System.out.println("--------------------------------------------------");
 	   
 	   System.out.println("---------------------------------------------------");
+	   
+	   
 	   System.out.println("We are now testing ImprovedStackImpl");
-	   ImprovedStackImpl second = new ImprovedStackImpl ();
-	   second.push(S1);
-	   second.push(S2);
-	   second.push(S3);
-	   second.push(S4);
-	   second.push(S3);
-	   second.push(S6); 
-	   second.push(S7);
+	   
+	   List first = new ArrayList();
+	   StackImpl fifth = new StackImpl (first);
+	   fifth.push(S1);
+	   System.out.println(fifth.pop().getReturnValue().getstudent());
+	   fifth.pop();
+	   fifth.pop();
+	   System.out.println(fifth.pop().getError().displayErrormessage());
+	   System.out.println(fifth.top().getError().displayErrormessage());
+	   fifth.push(S1);
+	   fifth.push(S2);
+	   System.out.println(fifth.top().getReturnValue().getstudent());
+	   //System.out.println(second.pop().getReturnValue().getstudent());
+	   //second.pop();
+	   //second.pop();
+	   //System.out.println(second.pop().getError().displayErrormessage());
+	   
+	   //second.push(S2);
+	  
+	   //second.push(S3);
+	   //second.push(S4);
+	   //second.push(S3);
+	   //second.push(S6); 
+	   //second.push(S7);
 	   System.out.println("Below is the result of the top");
-	   System.out.println(second.top().getReturnValue().getstudent());
+	   //System.out.println(second.top().getReturnValue().getstudent());
 	   System.out.println("We are now testing the remove feature, removing S7");
-	   second.remove(S7);
-	   System.out.println(second.top().getReturnValue().getstudent());
+	   //second.remove(S7);
+	   //System.out.println(second.top().getReturnValue().getstudent());
 	   System.out.println("We are now testing the reverse feature");
-	   second.reverse();
-	   System.out.println(second.reverse().top().getReturnValue().getstudent());
+	   //second.reverse();
+	   //System.out.println(second.reverse().top().getReturnValue().getstudent());
 	   System.out.println("We are done testing ImprovedStackImpl");
-	   System.out.println("--------------------------------------------------");	
+	   System.out.println("--------------------------------------------------");
+	   
 	   
 	   
 	   
@@ -123,58 +117,14 @@ public class script {
 	   //second.top();
 	   System.out.println("This the result of remove");
 	   //System.out.println(second.top());
-	   second.remove(S3);
+	   //second.remove(S3);
 	   
 	   //System.out.println("Below is the result of the reverse");
-	   second.reverse();
-	   second.size();
-	   second.top();
-	   second.isEmpty();
-	   second.pop();
+	   //second.reverse();
 	   //second.size();
+	   //second.top();
+	   //second.isEmpty();
 	   //second.pop();
-	   
-	   //first.get(0);
-	   //first.get(1);
-	   //first.get(2);
-	   //first.get(3);
-	   //first.get(4);
-	   //first.get(5);
-	   //first.get(6);
-	   //System.out.println("-------------------");
-	   //first.remove(0);
-	   //first.add(0, S7);
-	   //System.out.println("-------------------");
-	   //first.get(0);
-	   //first.get(1);
-	   //first.get(2);
-	   //first.get(3);
-	   //first.get(4);
-	   //first.get(5);
-	   //first.get(6);
-	   //first.head();
-	   
-	   //System.out.println("-------------------");
-	   //first.sample();
-	   //first.head();
-	     //first.rest();
-	   
-	   //first.add(S3);
-	   //first.add(S4);
-	   //first.get(0);
-	   //first.remove(0);
-	   //first.get(0);
-	   //first.add(0, S4);
-	   
-	   //first.remove(3);
-	   //first.add(0, S4);
-	   
-	   
-	   //ReturnObject S2 = new ReturnObject(S1);
-	   
-	   //System.out.println(S2.getObject().getstudent());
-	   
-	   //System.out.println(S2.getErrorMessage().displaymessage());
 		   
 	   }
 	   
