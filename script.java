@@ -38,9 +38,10 @@ public class script {
 	   //first.add(S7);
 	   System.out.println("-------------------");
 	   //StackImpl second = new StackImpl (first);
+	   
+	   System.out.println("---------------------------------------------------");
+	   System.out.println("We are now testing ImprovedStackImpl");
 	   ImprovedStackImpl second = new ImprovedStackImpl ();
-	   //second.size();
-	   //second.top();
 	   second.push(S1);
 	   second.push(S2);
 	   second.push(S3);
@@ -48,19 +49,31 @@ public class script {
 	   second.push(S3);
 	   second.push(S6); 
 	   second.push(S7);
-	   //System.out.println("Below is the result of the top");
-	   //second.pop();
+	   System.out.println("Below is the result of the top");
+	   System.out.println(second.top().getReturnValue().getstudent());
+	   System.out.println("We are now testing the remove feature, removing S7");
+	   second.remove(S7);
+	   System.out.println(second.top().getReturnValue().getstudent());
+	   System.out.println("We are now testing the reverse feature");
+	   second.reverse();
+	   System.out.println(second.reverse().top().getReturnValue().getstudent());
+	   System.out.println("We are done testing ImprovedStackImpl");
+	   System.out.println("--------------------------------------------------");	
+	   
+	   
+	   
 	   //System.out.println("Below is the result of the top");
 	   //second.top();
 	   System.out.println("This the result of remove");
+	   //System.out.println(second.top());
 	   second.remove(S3);
 	   
 	   //System.out.println("Below is the result of the reverse");
-	   //second.reverse();
-	   //second.size();
-	   //second.top();
-	   //second.isEmpty();
-	   //second.pop();
+	   second.reverse();
+	   second.size();
+	   second.top();
+	   second.isEmpty();
+	   second.pop();
 	   //second.size();
 	   //second.pop();
 	   

@@ -175,7 +175,7 @@
 		}
 		else {
 			if (!result.hasError()) {	
-				System.out.println (result.getReturnValue().getstudent());
+				//System.out.println (result.getReturnValue().getstudent());
 				for (int i = index; i < dimension ; i++) {
 					this.ObjectArray[i] = this.ObjectArray[i+1];
 				}
@@ -188,7 +188,6 @@
 		return result;
 	}
 		
-	
 	/**
 	 * This an implementation of add. Read interface for more details on returns.
 	 * It leverages if statement for error setting messages. It also leverages for

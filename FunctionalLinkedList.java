@@ -1,5 +1,7 @@
 /**
  * This is the extension of LinkedList and implementation of FunctionalList using Linked lists. 
+ *
+ *@author YAP.
  */
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	 
@@ -14,7 +16,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	 /**
      * This is the implementation of the head() method defined on FunctionalList.
 	 * It leverages the get() method from List to return firt item
-     * on the list.
+     * on the list.It has a couple of grayed out println that helped on development.
 	 */
 	 public ReturnObject head(){
 		 ReturnObject result = get(0);
