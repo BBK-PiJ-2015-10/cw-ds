@@ -77,7 +77,7 @@ public class script {
 	   System.out.println("We are now testing ImprovedStackImpl");
 	   
 	   List first = new ArrayList();
-	   StackImpl fifth = new StackImpl (first);
+	   ImprovedStackImpl fifth = new ImprovedStackImpl ();
 	   fifth.push(S1);
 	   System.out.println(fifth.pop().getReturnValue().getstudent());
 	   fifth.pop();
@@ -86,26 +86,22 @@ public class script {
 	   System.out.println(fifth.top().getError().displayErrormessage());
 	   fifth.push(S1);
 	   fifth.push(S2);
+	   fifth.push(S3);
+	   fifth.push(S4);
+	   fifth.push(S5);
+	   fifth.push(S6);
+	   fifth.push(S7);
 	   System.out.println(fifth.top().getReturnValue().getstudent());
-	   //System.out.println(second.pop().getReturnValue().getstudent());
-	   //second.pop();
-	   //second.pop();
-	   //System.out.println(second.pop().getError().displayErrormessage());
-	   
-	   //second.push(S2);
-	  
-	   //second.push(S3);
-	   //second.push(S4);
-	   //second.push(S3);
-	   //second.push(S6); 
-	   //second.push(S7);
 	   System.out.println("Below is the result of the top");
 	   //System.out.println(second.top().getReturnValue().getstudent());
 	   System.out.println("We are now testing the remove feature, removing S7");
-	   //second.remove(S7);
-	   //System.out.println(second.top().getReturnValue().getstudent());
+	   //fifth.remove(S7);
+	   //System.out.println(fifth.pop().getError().displayErrormessage());
+	   //System.out.println(fifth.top().getReturnValue().getstudent());
+	   //fifth.pop();
 	   System.out.println("We are now testing the reverse feature");
-	   //second.reverse();
+	   System.out.println(fifth.top().getReturnValue().getstudent());
+	   System.out.println(fifth.reverse().top().getReturnValue().getstudent());
 	   //System.out.println(second.reverse().top().getReturnValue().getstudent());
 	   System.out.println("We are done testing ImprovedStackImpl");
 	   System.out.println("--------------------------------------------------");

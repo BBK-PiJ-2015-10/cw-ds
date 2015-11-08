@@ -24,7 +24,6 @@ public class ImprovedStackImpl implements ImprovedStack {
      * It leverages the isEmpty() method from the List data structure.	 
      */
 	public boolean isEmpty(){
-		//System.out.println(this.internalList.isEmpty());
 		return this.internalList.isEmpty();
 	}
 
@@ -33,7 +32,6 @@ public class ImprovedStackImpl implements ImprovedStack {
      * It leverages the size() method from the List data structure.	 
      */
 	public int size(){
-		//System.out.println(this.internalList.size());
 		return this.internalList.size();
 	}
 
@@ -56,19 +54,33 @@ public class ImprovedStackImpl implements ImprovedStack {
 	/**
      * This is the implementation of the top() method declared on Stack. 
      * It leverages the get() method from the List data structure and uses. 	 
-     * position 0.
+     * position 0. 
 	 */
-	public ReturnObject top(){
+	 public ReturnObject top(){
+		if (this.internalList.isEmpty()) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
+			result.manualsetErrormessage("The stack is empty");
+			return result;
+		}
+		else {
 		return this.internalList.get(0);
+		}
 	}
-
+	
 	/**
      * This is the implementation of the pop() method declared on Stack. 
      * It leverages the remove() method from the List data structure and uses. 	 
      * position 0.
 	 */
-	public ReturnObject pop(){
+	 public ReturnObject pop(){
+		if (this.internalList.isEmpty()) {
+			ReturnObjectImpl result = new ReturnObjectImpl(null);
+			result.manualsetErrormessage("No more items on the stack");
+			return result;
+		}
+		else {
 		return this.internalList.remove(0);
+		}
 	}
 	
 	/**
@@ -94,10 +106,7 @@ public class ImprovedStackImpl implements ImprovedStack {
 			if (this.internalList.get(i).getReturnValue() == object){
 				this.internalList.remove(i);
 			}
-		}
-		//for (int i = 0; i < this.internalList.size(); i++){
-		    //this.internalList.get(i).getReturnValue().getstudent(); 	
-		//}	
+		}	
 	}
 	
 }
